@@ -1,72 +1,74 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body, html {
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    overflow: hidden;
 }
 
-/* Background and overlay */
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: grayscale(100%) brightness(50%);
+    object-fit: cover;
+}
+
 .overlay {
-  background-image: url('https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
 }
 
-/* Content styling */
-.content {
-  background-color: rgba(0, 0, 0, 0.5); /* soft dark overlay */
-  color: #fff;
-  text-align: center;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  max-width: 90%;
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    font-weight: 700;
 }
 
-.content h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
+p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
 }
 
-.content p {
-  font-size: 1.5rem;
-  font-weight: 400;
-  opacity: 0.85;
+.email-capture {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .content h1 {
-    font-size: 2.2rem;
-  }
-
-  .content p {
-    font-size: 1.2rem;
-  }
+.email-capture input, .email-capture button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
-@media (max-width: 480px) {
-  .content {
-    padding: 2rem 1rem;
-  }
+.email-capture input {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
 
-  .content h1 {
-    font-size: 1.8rem;
-  }
+.email-capture button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-  .content p {
-    font-size: 1rem;
-  }
+.email-capture button:hover {
+    background-color: #ccc;
 }
